@@ -21,6 +21,7 @@ class Mentor(models.Model):
 class Opinion(models.Model):
     name = models.CharField(max_length=50)
     description = models.TextField()
+    mentor_id = models.ForeignKey(Mentor, on_delete=models.CASCADE, default=1)
 
     def __str__(self):
         return self.name
